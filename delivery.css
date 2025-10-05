@@ -1,0 +1,68 @@
+
+/* css/delivery.css */
+
+.delivery-dashboard h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.delivery-list {
+    display: grid;
+    gap: 20px;
+}
+
+.delivery-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.delivery-info {
+    flex-grow: 1;
+}
+
+.delivery-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.delivery-info p {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.delivery-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.delivery-actions label {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.delivery-actions select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    font-size: 1em;
+    min-width: 180px;
+}
+
+.status-select.pending {
+    border-left: 4px solid #ffc107; /* Yellow */
+}
+.status-select.out-for-delivery {
+    border-left: 4px solid var(--primary-color); /* Blue */
+}
+.status-select.delivered {
+    border-left: 4px solid var(--accent-color); /* Green */
+}
+    

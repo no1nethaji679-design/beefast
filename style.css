@@ -1,0 +1,553 @@
+/* Basic Reset & Global Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Honeybee Color Palette */
+    --honey-yellow: #ffc107; /* Bright, warm yellow */
+    --dark-honey: #ffa000;  /* Deeper orange-yellow */
+    --bee-black: #212121;   /* Rich, dark black for contrast */
+    --pollen-orange: #ff9800; /* Warm orange */
+    --leaf-green: #4caf50; /* Fresh green accent */
+    --light-cream: #fff8e1; /* Very light background, soft */
+    --mid-gray: #757575;    /* Muted gray for secondary text */
+    --white: #ffffff;
+    --shadow-soft: 0 5px 15px rgba(0,0,0,0.1);
+    --shadow-deep: 0 10px 30px rgba(0,0,0,0.2);
+
+    /* Typography */
+    --font-family-body: 'Open Sans', sans-serif; /* Friendly and readable */
+    --font-family-heading: 'Fredoka One', cursive; /* Playful and bold for headings/logo */
+
+    /* Rotator Colors (adapted for bee theme) */
+    --rotator-color-1: var(--honey-yellow);
+    --rotator-color-2: var(--pollen-orange);
+    --rotator-color-3: var(--leaf-green);
+    --rotator-color-4: var(--bee-black);
+}
+
+/* Import Google Fonts - Ensure these are linked in your HTML <head> */
+/* @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;600;700&display=swap'); */
+
+
+body {
+    font-family: var(--font-family-body);
+    line-height: 1.6;
+    color: var(--bee-black); /* Darker text */
+    background-color: var(--light-cream); /* Light cream background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%23fff2d5"><path d="M50 0L0 28.867v57.735L50 100l50-28.867V28.867z" opacity="0.1"></path></g></svg>');
+    background-size: 50px 50px; /* Adjust size of honeycomb pattern */
+}
+
+
+main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading); /* Playful headings */
+    color: var(--bee-black);
+    text-align: center;
+    font-weight: normal; /* Fredoka One is inherently bold */
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 3.8rem;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    color: var(--dark-honey); /* Hero heading is honey colored */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+h2.section-title { /* Specific style for main section titles */
+    font-size: 2.8rem;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+    color: var(--pollen-orange); /* Orange for section titles */
+}
+
+h2.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100px; /* Wider underline */
+    height: 6px; /* Thicker underline */
+    background-color: var(--honey-yellow);
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* Header & Navigation */
+.main-header {
+    background-color: var(--white);
+    border-bottom: 2px solid var(--honey-yellow); /* Honey border */
+    padding: 15px 0;
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    font-family: var(--font-family-heading); /* Logo text is playful */
+    font-size: 2.5rem; /* Larger logo text */
+    font-weight: normal;
+    color: var(--dark-honey); /* Deep honey color */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 70px; /* Adjusted logo height */
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.2)); /* More pronounced shadow for bee */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--bee-black);
+    font-weight: 600; /* Bolder nav links */
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Slightly below link */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px; /* Thicker underline */
+    background-color: var(--honey-yellow); /* Honey yellow underline */
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--honey-yellow); /* Hover becomes honey yellow */
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 180px;
+    box-shadow: var(--shadow-soft);
+    z-index: 1;
+    border-radius: 10px; /* More rounded */
+    overflow: hidden;
+    top: calc(100% + 12px); /* More space from nav item */
+    left: 0;
+    padding: 8px 0;
+    border: 1px solid var(--honey-yellow); /* Honey border */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px); /* More pronounced slide down */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-content a {
+    color: var(--bee-black);
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--honey-yellow); /* Honey yellow on hover */
+    color: var(--bee-black); /* Dark text on honey background */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.arrow {
+    border: solid var(--bee-black);
+    border-width: 0 3px 3px 0; /* Thicker arrow */
+    display: inline-block;
+    padding: 4px;
+    margin-left: 8px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.dropdown:hover .arrow {
+    border-color: var(--honey-yellow); /* Honey yellow on hover */
+    transform: rotate(225deg);
+}
+
+
+/* Nav Actions (Sign In/Cart/User) */
+.nav-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#user-auth-status {
+    position: relative;
+}
+
+.user-icon {
+    font-size: 32px; /* Larger icon */
+    color: var(--honey-yellow); /* Honey yellow icon */
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 193, 7, 0.1); /* Light honey background */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.user-icon:hover {
+    background-color: rgba(255, 193, 7, 0.2);
+    transform: scale(1.05);
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: var(--shadow-soft);
+    z-index: 10;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--honey-yellow);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.user-dropdown a {
+    color: var(--bee-black);
+    padding: 12px 18px;
+    text-decoration: none;
+    display: block;
+    margin-left: 0;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.user-dropdown a:hover {
+    background-color: var(--honey-yellow);
+    color: var(--bee-black);
+}
+
+#user-auth-status:hover .user-dropdown,
+.user-status-logged-in:hover .user-dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* General Buttons */
+.btn {
+    padding: 12px 25px; /* More padding */
+    border-radius: 30px; /* Pill-shaped buttons */
+    text-decoration: none;
+    font-weight: 700; /* Bolder text */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 0.8px; /* More letter spacing */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Softer shadow */
+}
+
+.btn:hover {
+    transform: translateY(-3px); /* More lift */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Stronger shadow on hover */
+}
+
+.btn-primary {
+    background-color: var(--honey-yellow);
+    color: var(--bee-black); /* Dark text on honey button */
+}
+.btn-primary:hover {
+    background-color: var(--dark-honey); /* Darker honey on hover */
+    color: var(--white); /* White text on darker honey */
+}
+
+.btn-secondary {
+    background-color: var(--mid-gray);
+    color: var(--honey-yellow);
+}
+.btn-secondary:hover {
+    background-color: var(--bee-black); /* Darker gray/black on hover */
+}
+
+.btn-accent { /* Used for "Shop Now" */
+    background-color: var(--pollen-orange); /* Vibrant orange */
+    color: var(--white);
+}
+.btn-accent:hover {
+    background-color: var(--dark-honey); /* Deeper orange-honey on hover */
+}
+
+.btn-info {
+    background-color: var(--honey-yellow); /* Leaf green */
+    color: var(--white);
+}
+.btn-info:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Specific styling for product card buttons */
+.product-btn {
+    border-radius: 20px; /* Slightly less rounded than main buttons */
+    padding: 10px 18px;
+    font-weight: 600;
+}
+
+.cart-btn {
+    border-radius: 30px; /* Cart button more rounded */
+    background-color: var(--pollen-orange); /* Unique color for cart */
+    color: var(--white);
+    padding: 12px 20px;
+}
+.cart-btn:hover {
+    background-color: var(--dark-honey);
+}
+.cart-btn i {
+    margin-right: 8px;
+}
+
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--light-cream) 0%, var(--white) 100%); /* Soft gradient background */
+    padding: 80px 0;
+    min-height: 550px; /* Taller hero */
+    border-bottom: 2px solid var(--honey-yellow);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* More prominent shadow */
+}
+
+.hero-content {
+    flex: 1;
+    padding: 0 60px;
+    text-align: left;
+    max-width: 600px;
+    z-index: 1; /* Ensure text is above any background elements */
+}
+
+.hero-content h1 {
+    font-size: 4.2rem; /* Even larger for impact */
+    margin-bottom: 25px;
+    color: var(--dark-honey);
+    text-align: left;
+    line-height: 1.05;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.15); /* Stronger text shadow */
+}
+
+.hero-content p {
+    font-size: 1.4rem; /* Larger, more welcoming text */
+    margin-bottom: 40px;
+    color: var(--mid-gray); /* Muted for contrast */
+    max-width: 500px;
+}
+.hero-btn {
+    font-size: 1.1rem;
+    padding: 15px 35px;
+}
+
+/* Ad Rotator Styling */
+.hero-image-rotator {
+    flex: 1;
+    position: relative;
+    max-width: 700px; /* Even larger rotator */
+    height: 450px; /* Taller */
+    margin-right: 60px;
+    border-radius: 15px; /* More rounded corners */
+    overflow: hidden;
+    box-shadow: var(--shadow-deep); /* Deeper shadow for prominence */
+    background: linear-gradient(45deg, var(--honey-yellow) 0%, var(--dark-honey) 100%); /* Honey gradient background */
+    border: 4px solid var(--pollen-orange); /* Stronger border */
+    transform: rotate(-3deg); /* Slight rotation for dynamic feel */
+    animation: floatRotate 10s ease-in-out infinite alternate; /* New floating animation */
+}
+/* Keyframes for floating and subtle rotation */
+@keyframes floatRotate {
+    0% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-15px) rotate(0deg); }
+    100% { transform: translateY(0) rotate(-3deg); }
+}
+
+
+.hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 0.5s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    animation: pulseBorder 4s infinite ease-in-out;
+    transform: scale(1.02);
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px; /* Inner image slightly less rounded than container */
+}
+
+/* Rotator Indicators */
+.rotator-indicators {
+    position: absolute;
+    bottom: 25px; /* Lower */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px; /* More space between dots */
+    z-index: 2;
+    background: rgba(0,0,0,0.5); /* Darker, more opaque background */
+    padding: 10px 20px; /* More padding */
+    border-radius: 30px; /* Pill shape */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.indicator-dot {
+    width: 16px; /* Larger dots */
+    height: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid rgba(0, 0, 0, 0.2); /* Thicker border */
+}
+
+.indicator-dot.active {
+    background-color: var(--rotator-color-1);
+    transform: scale(1.4); /* More pronounced scale */
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.9), 0 0 25px var(--rotator-color-1); /* Stronger glow */
+}
+.indicator-dot:nth-child(2).active { background-color: var(--rotator-color-2); box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.9), 0 0 25px var(--rotator-color-2); }
+.indicator-dot:nth-child(3).active { background-color: var(--rotator-color-3); box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.9), 0 0 25px var(--rotator-color-3); }
+.indicator-dot:nth-child(4).active { background-color: var(--rotator-color-4); box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.9), 0 0 25px var(--rotator-color-4); }
+
+
+/* Colorful Pulse Border Animation for active slide - RGB values for rgba() */
+/* Define RGB values for rotator colors based on the new bee theme palette */
+:root {
+    --rotator-color-1-rgb: 255, 193, 7;   /* honey-yellow */
+    --rotator-color-2-rgb: 255, 152, 0;   /* pollen-orange */
+    --rotator-color-3-rgb: 76, 175, 80;   /* leaf-green */
+    --rotator-color-4-rgb: 33, 33, 33;    /* bee-black */
+}
+@keyframes pulseBorder {
+    0% { border-color: var(--rotator-color-1); box-shadow: 0 0 18px rgba(var(--rotator-color-1-rgb), 0.7); }
+    25% { border-color: var(--rotator-color-2); box-shadow: 0 0 18px rgba(var(--rotator-color-2-rgb), 0.7); }
+    50% { border-color: var(--rotator-color-3); box-shadow: 0 0 18px rgba(var(--rotator-color-3-rgb), 0.7); }
+    75% { border-color: var(--rotator-color-4); box-shadow: 0 0 18px rgba(var(--rotator-color-4-rgb), 0.7); }
+    100% { border-color: var(--rotator-color-1); box-shadow: 0 0 18px rgba(var(--rotator-color-1-rgb), 0.7); }
+}
+
+
+/* Product Grid & Cards */
+.featured-products {
+    background-color: var(--light-cream);
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* Slightly wider cards */
+    gap: 45px; /* More space */
+}
+
+.product-card {
+    background-color: var(--white);
+    border: none;
+    border-radius: 15px; /* More rounded */
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 30px; /* Increased padding */
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%); /* Slight inner gradient */
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* More pronounced lift */
+    box-shadow: var(--shadow-deep); /* Deeper shadow on hover */
+    border: 1px solid var(--honey-yellow); /* Subtle honey border on hover */
+}

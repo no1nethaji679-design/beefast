@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beefast - Product Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product-info.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header" id="site-header">
+        <nav class="navbar" id="main-navbar">
+            <div class="logo">
+                <a id="brand-logo" href="index.html">Beefast</a>
+            </div>
+            <ul class="nav-links" id="main-nav-links">
+                <li><a id="nav-home" href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a id="nav-products" href="products.html">Products <i class="arrow down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="products.html?category=mens">Men's</a>
+                        <a href="products.html?category=womens">Women's</a>
+                        <a href="products.html?category=smartphones">Smartphones</a>
+                    </div>
+                </li>
+                <li><a id="nav-about" href="#">About</a></li>
+                <li><a id="nav-contact" href="#">Contact</a></li>
+            </ul>
+            <div class="nav-actions" id="nav-actions-right">
+                <div id="user-auth-status">
+                    <!-- This will be populated by script.js -->
+                </div>
+                <a id="nav-cart" href="cart.html" class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="product-info-main">
+        <section class="product-details-container">
+            <div class="product-image-area">
+                <img id="product-main-image" src="images/placeholder.jpg" alt="Product Image">
+            </div>
+
+            <div class="product-info-area">
+                <h1 id="product-name">Product Name Loading...</h1>
+                <p class="product-id">SKU: <span id="product-sku">P-0000</span></p>
+
+                <div class="price-section">
+                    <span id="product-price" class="large-price">$0.00</span>
+                </div>
+
+                <div class="product-description">
+                    <h2>Quick Overview</h2>
+                    <p id="product-description-full">
+                        Loading product details...
+                    </p>
+                </div>
+                
+                <div class="product-options">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" value="1" min="1" max="100">
+                </div>
+
+                <div class="action-buttons">
+                    <button id="add-to-cart-btn" class="btn btn-accent btn-lg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+                
+                <div class="feature-list">
+                    <h2>Key Features</h2>
+                    <ul id="product-features-list">
+                       <!-- Dynamically loaded -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Beefast. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/product-info.js"></script>
+</body>
+</html>

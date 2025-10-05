@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beefast - Sign In / Register</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/auth.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header class="main-header" id="site-header">
+        <nav class="navbar" id="main-navbar">
+            <div class="logo">
+                <a id="brand-logo" href="index.html">Beefast</a>
+            </div>
+            <ul class="nav-links" id="main-nav-links">
+                <li><a id="nav-home" href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a id="nav-products" href="products.html">Products <i class="arrow down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="products.html?category=mens">Men's</a>
+                        <a href="products.html?category=womens">Women's</a>
+                        <a href="products.html?category=smartphones">Smartphones</a>
+                    </div>
+                </li>
+                <li><a id="nav-about" href="#">About</a></li>
+                <li><a id="nav-contact" href="#">Contact</a></li>
+            </ul>
+            <div class="nav-actions" id="nav-actions-right">
+                <div id="user-auth-status">
+                     <!-- Populated by script.js -->
+                </div>
+                <a id="nav-cart" href="cart.html" class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main class="form-container">
+        
+        <h1 class="auth-logo">BEEFAST</h1>
+
+        <div class="auth-card">
+            <div class="tab-switcher">
+                <button id="show-signin" class="tab-button active">Sign In</button>
+                <button id="show-register" class="tab-button">Register</button>
+            </div>
+
+            <div id="signin-box" class="form-box">
+                <form id="signin-form">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </form>
+                <p class="auth-message">Forgot your password? <a href="#">Reset it</a></p>
+            </div>
+
+            <div id="register-box" class="form-box" style="display: none;">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="reg-username">Username:</label>
+                        <input type="text" id="reg-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email:</label>
+                        <input type="email" id="reg-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password:</label>
+                        <input type="password" id="reg-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-confirm-password">Confirm Password:</label>
+                        <input type="password" id="reg-confirm-password" name="confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Register</button>
+                </form>
+                <p class="auth-message">By registering you agree to the <a href="#">Terms of Service</a></p>
+            </div>
+
+            <div id="success-box" class="form-box" style="display: none; text-align: center;">
+                <h2 style="color: #28a745;">Registration Successful!</h2>
+                <p>You can now sign in with your new account.</p>
+                <button id="go-to-signin" class="btn btn-primary">Go to Sign In</button>
+            </div>
+
+        </div>
+    </main>
+    
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

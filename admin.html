@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beefast - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header" id="site-header">
+        <nav class="navbar" id="main-navbar">
+            <div class="logo">
+                <a id="brand-logo" href="index.html">Beefast</a>
+            </div>
+            <ul class="nav-links" id="main-nav-links">
+                <li><a id="nav-home" href="index.html">Home</a></li>
+                <li><a id="nav-products" href="products.html">Products</a></li>
+            </ul>
+            <div class="nav-actions" id="nav-actions-right">
+                <div id="user-auth-status">
+                    <!-- This will be populated by script.js -->
+                </div>
+                <a id="nav-cart" href="cart.html" class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-dashboard container">
+        <aside class="dashboard-sidebar">
+            <h2>Admin Menu</h2>
+            <nav class="dashboard-nav">
+                <a href="#" class="dashboard-nav-link active" data-target="dashboard-overview"><i class="fas fa-tachometer-alt"></i> Overview</a>
+                <a href="#" class="dashboard-nav-link" data-target="manage-products"><i class="fas fa-box-open"></i> Products</a>
+                <a href="#" class="dashboard-nav-link" data-target="manage-orders"><i class="fas fa-receipt"></i> Orders</a>
+                <a href="#" class="dashboard-nav-link" data-target="manage-users"><i class="fas fa-users"></i> Users</a>
+            </nav>
+        </aside>
+
+        <section class="dashboard-content">
+            <div id="dashboard-overview" class="dashboard-tab-content active">
+                <h1>Dashboard Overview</h1>
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h3>Total Sales</h3>
+                        <p>$125,670</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>New Orders</h3>
+                        <p>34</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>New Users</h3>
+                        <p>15</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="manage-products" class="dashboard-tab-content">
+                <h1>Manage Products</h1>
+                <button class="btn btn-primary add-product-btn">Add New Product</button>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>SKU</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-table-body">
+                            <!-- Populated by admin.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="manage-orders" class="dashboard-tab-content">
+                <h1>Manage Orders</h1>
+                <p>Order management functionality will be here.</p>
+            </div>
+            
+            <div id="manage-users" class="dashboard-tab-content">
+                <h1>Manage Users</h1>
+                <p>User management functionality will be here.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Beefast. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

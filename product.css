@@ -1,0 +1,15 @@
+/* css/products.css */
+
+.products-page-main {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#category-title {
+    font-size: 2.5em;
+    color: var(--dark-text);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    margin-bottom: 40px;
+}

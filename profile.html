@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beefast - My Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header" id="site-header">
+        <nav class="navbar" id="main-navbar">
+            <div class="logo">
+                <a id="brand-logo" href="index.html">Beefast</a>
+            </div>
+            <ul class="nav-links" id="main-nav-links">
+                <li><a id="nav-home" href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a id="nav-products" href="products.html">Products <i class="arrow down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="products.html?category=mens">Men's</a>
+                        <a href="products.html?category=womens">Women's</a>
+                        <a href="products.html?category=smartphones">Smartphones</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-actions" id="nav-actions-right">
+                <div id="user-auth-status">
+                    <!-- This will be populated by script.js -->
+                </div>
+                <a id="nav-cart" href="cart.html" class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile-page container">
+        <h1>My Account</h1>
+        <div class="profile-container">
+            <aside class="profile-nav">
+                <button class="profile-nav-link active" data-target="profile-details">
+                    <i class="fas fa-user-circle"></i> Profile Details
+                </button>
+                <button class="profile-nav-link" data-target="order-history">
+                    <i class="fas fa-history"></i> Order History
+                </button>
+            </aside>
+
+            <section class="profile-content">
+                <div id="profile-details" class="profile-tab-content active">
+                    <h2>Your Information</h2>
+                    <form id="profile-form">
+                        <div class="form-group">
+                            <label for="profile-name">Full Name</label>
+                            <input type="text" id="profile-name" value="Demo User" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-email">Email Address</label>
+                            <input type="email" id="profile-email" value="demo@example.com" disabled>
+                        </div>
+                         <div class="form-group">
+                            <label for="profile-phone">Phone Number</label>
+                            <input type="tel" id="profile-phone" value="555-123-4567" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-address">Default Shipping Address</label>
+                            <textarea id="profile-address" rows="3" disabled>123 Demo Street, Anytown, USA</textarea>
+                        </div>
+                        <div class="profile-actions">
+                            <button type="button" id="edit-profile-btn" class="btn btn-primary">Edit Profile</button>
+                            <button type="submit" id="save-profile-btn" class="btn btn-accent" style="display:none;">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="order-history" class="profile-tab-content">
+                    <h2>Your Orders</h2>
+                    <div class="order-history-placeholder">
+                        <i class="fas fa-box-open fa-3x" style="color: #ccc;"></i>
+                        <p>You have not placed any orders yet.</p>
+                        <a href="products.html" class="btn btn-primary">Start Shopping</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Beefast. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

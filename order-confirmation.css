@@ -1,0 +1,104 @@
+/* css/order-confirmation.css */
+
+.confirmation-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.confirmation-icon {
+    font-size: 5em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.confirmation-container h1 {
+    font-size: 2.2em;
+}
+
+.confirmation-container p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.order-details-summary {
+    text-align: left;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.order-details-summary h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.summary-block {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.summary-block h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.ordered-items-list .ordered-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.ordered-items-list .ordered-item:last-child {
+    border-bottom: none;
+}
+
+.ordered-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.ordered-item .item-info {
+    flex-grow: 1;
+}
+
+.item-info h4 {
+    margin: 0;
+}
+.item-info p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+
+.order-totals .summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 1.1em;
+}
+
+.order-totals .summary-line.total {
+    font-weight: bold;
+    font-size: 1.3em;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.confirmation-container .btn-block {
+    margin-top: 30px;
+}

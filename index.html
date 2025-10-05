@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beefast - Your E-commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Using Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Adding Google Fonts for a warmer feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="honeycomb-background"> <!-- Added class for the background pattern -->
+    <header class="main-header" id="site-header">
+        <nav class="navbar" id="main-navbar">
+            <div class="logo">
+                <a id="brand-logo" href="index.html">
+                    <img src="images/bee.jpg" alt="Beefast" style="height: 80px;">
+                    <span class="logo-text">Beefast</span> <!-- Added span for logo text styling -->
+                </a>
+            </div>
+            <ul class="nav-links" id="main-nav-links">
+                <li><a id="nav-home" href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a id="nav-products" href="products.html">Products <i class="arrow down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="products.html?category=mens">Men's</a>
+                        <a href="products.html?category=womens">Women's</a>
+                        <a href="products.html?category=smartphones">Smartphones</a>
+                    </div>
+                </li>
+                <li><a id="nav-about" href="#">About</a></li>
+                <li><a id="nav-contact" href="#">Contact</a></li>
+            </ul>
+            <div class="nav-actions" id="nav-actions-right">
+                <div id="user-auth-status">
+                    <!-- This will be populated by script.js -->
+                </div>
+                <a id="nav-cart" href="cart.html" class="btn btn-secondary cart-btn"> <!-- Added cart-btn class -->
+                    <i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Discover Your Next Favorite Item</h1>
+                <p>New arrivals, exclusive deals, and top-rated products straight from our hive!</p>
+                <a href="products.html" class="btn btn-accent hero-btn">Shop Now</a>
+            </div>
+            <div class="hero-image-rotator">
+                <!-- IMPORTANT: Only the first slide has 'active' initially -->
+                <div class="hero-slide active" data-slide-index="0">
+                    <img src="images/summer_fashion_hero.jpg" alt="New Trending Summer Fashion">
+                </div>
+                <div class="hero-slide" data-slide-index="1">
+                    <img src="images/headphones.png" alt="Fantastic Headphones Deals">
+                </div>
+                <div class="hero-slide" data-slide-index="2">
+                    <img src="images/backpack.jpeg" alt="Versatile Backpacks">
+                </div>
+                <div class="hero-slide" data-slide-index="3">
+                    <img src="images/smartphones.png" alt="Latest Smartphones">
+                </div>
+                <!-- Add more hero-slide divs with different images as needed -->
+                <div class="rotator-indicators">
+                    <!-- Indicators will be dynamically added here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products container">
+            <h2 class="section-title">Our Bestsellers</h2> <!-- Added class for h2 -->
+            <div class="product-grid">
+                <div class="product-card" data-product-id="prod_tshirt_001">
+                    <img src="images/product1.jpg" alt="Stylish T-Shirt">
+                    <h3>Stylish T-Shirt</h3>
+                    <p class="price">$59.99</p>
+                    <div class="card-actions">
+                        <a href="product-info.html?id=prod_tshirt_001" class="btn btn-info product-btn">Info</a>
+                        <button class="btn btn-add-to-cart product-btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="prod_headphone_002">
+                    <img src="images/product2.jpg" alt="Wireless Headphones">
+                    <h3>Wireless Headphones</h3>
+                    <p class="price">$24.50</p>
+                    <div class="card-actions">
+                        <a href="product-info.html?id=prod_headphone_002" class="btn btn-info product-btn">Info</a>
+                        <button class="btn btn-add-to-cart product-btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="prod_watch_003">
+                    <img src="images/product3.jpg" alt="Smart Watch">
+                    <h3>Smart Watch</h3>
+                    <p class="price">$120.00</p>
+                    <div class="card-actions">
+                        <a href="product-info.html?id=prod_watch_003" class="btn btn-info product-btn">Info</a>
+                        <button class="btn btn-add-to-cart product-btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="prod_phone_nothing_004">
+                    <img src="images/nothing_phone.jpg" alt="Nothing Phone (2)">
+                    <h3>Nothing Phone (2)</h3>
+                    <p class="price">$699.00</p>
+                    <div class="card-actions">
+                        <a href="product-info.html?id=prod_phone_nothing_004" class="btn btn-info product-btn">Info</a>
+                        <button class="btn btn-add-to-cart product-btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="prod_phone_samsung_005">
+                    <img src="images/samsung_s24_ultra.jpg" alt="Samsung Galaxy S24 Ultra">
+                    <h3>Samsung Galaxy S24 Ultra</h3>
+                    <p class="price">$1199.00</p>
+                    <div class="card-actions">
+                        <a href="product-info.html?id=prod_phone_samsung_005" class="btn btn-info product-btn">Info</a>
+                        <button class="btn btn-add-to-cart product-btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="prod_laptop_asus_006">
+                    <img src="images/asus_laptop.jpg" alt="ASUS ROG Zephyrus G14 Gaming Laptop">
+                    <h3>ASUS ROG Zephyrus G14</h3>
+                    <p class="price">$1499.00</p>
+                    <div class="card-actions">
+                        <a href="product-info.html?id=prod_laptop_asus_006" class="btn btn-info product-btn">Info</a>
+                        <button class="btn btn-add-to-cart product-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Beefast. All rights reserved. | Powered by Worker Bees</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Our Hive</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* css/profile.css */
+
+.profile-page h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-container {
+    display: flex;
+    gap: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-basis: 200px;
+    flex-shrink: 0;
+}
+
+.profile-nav-link {
+    background: none;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--dark-text);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.profile-nav-link:hover {
+    background-color: #f0f2f5;
+}
+
+.profile-nav-link.active {
+    background-color: #e7f1ff;
+    color: var(--primary-color);
+    font-weight: 700;
+    border-left: 4px solid var(--primary-color);
+}
+
+.profile-content {
+    flex-grow: 1;
+}
+
+.profile-tab-content {
+    display: none;
+}
+
+.profile-tab-content.active {
+    display: block;
+}
+
+#profile-details h2,
+#order-history h2 {
+    text-align: left;
+    font-size: 1.8em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#profile-form {
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+#profile-form input:disabled,
+#profile-form textarea:disabled {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.profile-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.order-history-placeholder {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.order-history-placeholder p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+    .profile-nav {
+        flex-direction: row;
+        flex-basis: auto;
+        justify-content: center;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 15px;
+    }
+    .profile-nav-link {
+        border-left: none;
+        border-bottom: 4px solid transparent;
+        text-align: center;
+    }
+    .profile-nav-link.active {
+        border-left: none;
+        border-bottom: 4px solid var(--primary-color);
+    }
+}

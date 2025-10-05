@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrandName - Products</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css"> <!-- Specific CSS for products page -->
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Beefast</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Products <i class="arrow down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="products.html?category=mens">Men's</a>
+                        <a href="products.html?category=womens">Women's</a>
+                        <a href="products.html?category=smartphones">Smartphones</a>
+                        <!-- Add more categories as needed -->
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="signup.html" class="btn btn-primary">Sign In / Log In</a>
+                <a href="cart.html" class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="products-page-main">
+        <section class="products-listing">
+            <h1 id="category-title">All Products</h1>
+            <div class="product-grid" id="product-grid">
+                <!-- Product cards will be loaded here by JavaScript -->
+                <div class="product-card">
+                    <img src="images/mens_tshirt.jpg" alt="Men's Casual T-Shirt">
+                    <h3>Men's Casual T-Shirt</h3>
+                    <p class="price">$25.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/womens_dress.jpg" alt="Women's Summer Dress">
+                    <h3>Women's Summer Dress</h3>
+                    <p class="price">$45.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/smartphone_x.jpg" alt="Smartphone Model X">
+                    <h3>Smartphone Model X</h3>
+                    <p class="price">$799.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/mens_jeans.jpg" alt="Men's Slim Fit Jeans">
+                    <h3>Men's Slim Fit Jeans</h3>
+                    <p class="price">$55.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/womens_blouse.jpg" alt="Women's Elegant Blouse">
+                    <h3>Women's Elegant Blouse</h3>
+                    <p class="price">$38.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/smartphone_y.jpg" alt="Smartphone Model Y">
+                    <h3>Smartphone Model Y</h3>
+                    <p class="price">$1099.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/mens_jacket.jpg" alt="Men's Leather Jacket">
+                    <h3>Men's Leather Jacket</h3>
+                    <p class="price">$120.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/womens_skirt.jpg" alt="Women's Pleated Skirt">
+                    <h3>Women's Pleated Skirt</h3>
+                    <p class="price">$30.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/smartphone_z.jpg" alt="Budget Smartphone Z">
+                    <h3>Budget Smartphone Z</h3>
+                    <p class="price">$299.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <img src="images/mens_hoodie.jpg" alt="Men's Pullover Hoodie">
+                    <h3>Men's Pullover Hoodie</h3>
+                    <p class="price">$49.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/womens_jeans.jpg" alt="Women's High-Waisted Jeans">
+                    <h3>Women's High-Waisted Jeans</h3>
+                    <p class="price">$58.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+                 <div class="product-card">
+                    <img src="images/smartphone_lite.jpg" alt="Smartphone Lite Edition">
+                    <h3>Smartphone Lite Edition</h3>
+                    <p class="price">$450.00</p>
+                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2023 BrandName. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script> <!-- New JS file for products page logic -->
+</body>
+</html>
